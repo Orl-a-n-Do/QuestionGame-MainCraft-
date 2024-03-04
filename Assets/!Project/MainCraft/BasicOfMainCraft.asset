@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2805ac28acee59d4ea27dfcd2ca9495c, type: 3}
+  m_Name: BasicOfMainCraft
+  m_EditorClassIdentifier: 
+  groupAssets:
+  - {fileID: 11400000, guid: 3417382a166e2ed4589178f16c9c998b, type: 2}
+  - {fileID: 11400000, guid: 392dad46071c13548a74ce72edb4e5e2, type: 2}
+  - {fileID: 11400000, guid: d198877e12446864aae00e1ccca9d756, type: 2}
+  - {fileID: 11400000, guid: 96f8fd2434503694d9c3aa2e6b86c899, type: 2}
+  categoriesText:
+  - "\u041E\u0441\u043D\u043E\u0432\u044B Minecraft"
+  - "\u041A\u0440\u0430\u0444\u0442\u0438\u043D\u0433 \u0438 \u0441\u0442\u0440\u043E\u0438\u0442\u0435\u043B\u044C\u0441\u0442\u0432\u043E"
+  - "\u0418\u0437\u043C\u0435\u0440\u0435\u043D\u0438\u044F \u0438 \u0438\u0441\u0441\u043B\u0435\u0434\u043E\u0432\u0430\u043D\u0438\u044F"
+  - "\u041C\u043E\u0431\u044B \u0438 \u041F\u0435\u0440\u0441\u043E\u043D\u0430\u0436\u0438"

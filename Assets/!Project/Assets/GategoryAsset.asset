@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2805ac28acee59d4ea27dfcd2ca9495c, type: 3}
+  m_Name: GategoryAsset
+  m_EditorClassIdentifier: 
+  groupAssets:
+  - {fileID: 11400000, guid: 51f58d876fbcda14384545cf5aebe484, type: 2}
+  - {fileID: 11400000, guid: 981b159c331ab3a47817da47ec310db3, type: 2}
+  - {fileID: 11400000, guid: 582b79052e1ca5d4eacf120185af51c6, type: 2}
+  - {fileID: 11400000, guid: 582b79052e1ca5d4eacf120185af51c6, type: 2}
+  categoriesText:
+  - IT
+  - Universe
+  - Human
+  - Human

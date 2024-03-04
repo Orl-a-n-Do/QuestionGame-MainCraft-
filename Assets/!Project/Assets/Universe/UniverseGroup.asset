@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f13bb44dfbf8eb14280f01d98619e75d, type: 3}
+  m_Name: UniverseGroup
+  m_EditorClassIdentifier: 
+  GroupName: Universe
+  questionAssets:
+  - {fileID: 11400000, guid: 837a8eebc27b4f248ad59021c3ee46ff, type: 2}
+  - {fileID: 11400000, guid: 09527abed256fe64f9dd1044f2c9a783, type: 2}
+  - {fileID: 11400000, guid: dea88d5dd79fc04409ca3c7e1d20db8f, type: 2}
+  - {fileID: 11400000, guid: 8ef756e6b000b9849847712fe036f0bd, type: 2}
+  - {fileID: 11400000, guid: 144fb53e93a3a30418826eb7b9556590, type: 2}
+  - {fileID: 11400000, guid: c811501ac3fcd1943bacf6f914b98ee1, type: 2}
+  - {fileID: 11400000, guid: 4f2b899cead36f14daeb0c1536266950, type: 2}
+  - {fileID: 11400000, guid: 1f5933df1bccfca4c8cb893f1c23ec11, type: 2}
+  - {fileID: 11400000, guid: 4d75b0c22cb96914783e9c918bbdfea1, type: 2}
+  - {fileID: 11400000, guid: 69605992dfe27d04d86d0d4c5a2e7946, type: 2}
