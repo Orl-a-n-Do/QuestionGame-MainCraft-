@@ -12,7 +12,9 @@ public class MenuController : MonoBehaviour {
     public ScreenFadeScript screenFadeScript;
 
     private void Start() {
+
         screenFadeScript = GetComponent<ScreenFadeScript>();
+
         GameController.instance.onChangeState += ChangeState;
 		GroupButton[] groupButtons = GetComponentsInChildren<GroupButton>(true);
 		for(int i = 0; i < groupButtons.Length; i++) {
@@ -28,13 +30,14 @@ public class MenuController : MonoBehaviour {
 	private void ChangeState(GameState oldState, GameState newState) {
 		switch (oldState) {
 			case GameState.Menu:
-                //screenFadeScript.FadeScreen(true); // Затемнение Экрана;
+                screenFadeScript.FadeScreen(true); // Затемнение Экрана;
                 startMenu.SetActive(false);
 				selectCategory.SetActive(false);
 				break;
 			case GameState.Game:
 				if (oldState != GameState.Game || newState == GameState.Result)
-					questions.SetActive(false);
+                    screenFadeScript.FadeScreen(true);
+                questions.SetActive(false);
 				break;
 			case GameState.Pause:
 				if (newState == GameState.Menu)
@@ -49,7 +52,6 @@ public class MenuController : MonoBehaviour {
 			case GameState.Menu:
 				startMenu.SetActive(true);
 				break;
-			case GameState.Game:
 				questions.SetActive(true);
 				break;
 			case GameState.Result:

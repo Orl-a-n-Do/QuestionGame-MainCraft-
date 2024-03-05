@@ -14,7 +14,9 @@ public class ScreenFadeScript : MonoBehaviour
     {
         if (fadeOut)
         {
+           
             // Затемнить экран
+            Debug.Log("Затемнение Экрана");
             overlayImage.gameObject.SetActive(true);
             overlayImage.color = transparentColor;
             overlayImage.DOFade(1f, transitionDuration);
@@ -22,6 +24,7 @@ public class ScreenFadeScript : MonoBehaviour
         else
         {
             // Осветлить экран
+            Debug.Log("Осветление Экрана");
             overlayImage.DOFade(0f, transitionDuration).OnComplete(() => {
                 overlayImage.gameObject.SetActive(false);
             });
