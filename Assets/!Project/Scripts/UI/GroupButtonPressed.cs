@@ -2,10 +2,11 @@ using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using YG;
 
 public class GroupButtonPressed : MonoBehaviour
 {
-    public const float OnClickDelay = 0.15f;
+    public const float OnClickDelay = 0.4f;
     public Action<int> onButtonClick;
 
     [SerializeField] private int id;
@@ -31,5 +32,7 @@ public class GroupButtonPressed : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
         onButtonClick?.Invoke(id);
+
+        YandexGame.FullscreenShow();
     }
 }
