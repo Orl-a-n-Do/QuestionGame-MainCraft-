@@ -25,7 +25,7 @@ public class GroupButton : MonoBehaviour, IInit {
 		for (int i = 0; i < buttonObjests.Length; i++) {
 			groupButtonPresseds[i] = buttonObjests[i].AddComponent<GroupButtonPressed>();
 			groupButtonPresseds[i].SetId(i);
-			groupButtonPresseds[i].onButtonClick += ButtonClick;
+			groupButtonPresseds[i].OnButtonClick += ButtonClick;
 		}
 	}
 
@@ -56,7 +56,7 @@ public class GroupButton : MonoBehaviour, IInit {
 
 	private void OnDestroy() {
 		for (int i = 0; i < groupButtonPresseds.Length; i++) {
-			groupButtonPresseds[i].onButtonClick -= ButtonClick;
+			groupButtonPresseds[i].OnButtonClick -= ButtonClick;
 		}
 	}
 }

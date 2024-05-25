@@ -6,33 +6,35 @@ using YG;
 
 public class GroupButtonPressed : MonoBehaviour
 {
-    public const float OnClickDelay = 0.4f;
-    public Action<int> onButtonClick;
+    public const float OnClickDelay = 1f;
+    public Action<int> OnButtonClick;
 
-    [SerializeField] private int id;
-    [SerializeField] private Button button;
+    [SerializeField] private int _id;
+
+    private Button _button;
 
     private void Start()
     {
-        button = GetComponent<Button>();
-        button.onClick.AddListener(OnClick);
+        _button = GetComponent<Button>();
+        _button.onClick.AddListener(OnClick);
     }
 
     private void OnDestroy()
     {
-        if(button)
-            button.onClick.RemoveListener(OnClick);
+        if(_button)
+            _button.onClick.RemoveListener(OnClick);
     }
 
-    public void SetId(int id) => this.id = id;
+    public void SetId(int id) => _id = id;
 
     private void OnClick() => StartCoroutine(Invoke(OnClickDelay));
 
     private IEnumerator Invoke(float delay)
     {
+        Singleton<ScreenFading>.Instance.Fade(delay);
         yield return new WaitForSeconds(delay);
-        onButtonClick?.Invoke(id);
 
-        YandexGame.FullscreenShow();
+        Singleton<ScreenFading>.Instance.Appear(delay);
+        OnButtonClick?.Invoke(_id);
     }
 }
