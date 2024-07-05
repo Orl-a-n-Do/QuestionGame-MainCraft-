@@ -1,21 +1,37 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 
-public class Score : MonoBehaviour {
-	public static Score instance;
-	public int FinalScore => score;
-	private int score;
+public class Score : MonoBehaviour
+{
+    public static Score instance;
 
-	private void Awake() {
-		instance = this;
-	}
+    private int maxScore;
+    private int score;
 
-	public void AddScore(int n) {
-		score += n;
-	}
+    public int FinalScore => score;
 
-	public void ResetScore() {
-		score = 0;
-	}
+    public int MaxScore => maxScore;
+
+    private void Awake()
+    {
+        instance = this;
+    }
+
+    public void AddScore(int n)
+    {
+        score += n;
+    }
+
+    public void SetMaxScore(int number)
+    {
+        if(number < 0)
+            throw new ArgumentOutOfRangeException();
+
+        maxScore = number;
+    }
+
+    public void ResetScore()
+    {
+        score = 0;
+    }
 }

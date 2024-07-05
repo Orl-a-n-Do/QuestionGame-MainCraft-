@@ -815,6 +815,9 @@ MonoBehaviour:
   groupButton: {fileID: 284316215}
   groupAsset: {fileID: 11400000, guid: 3417382a166e2ed4589178f16c9c998b, type: 2}
   questionText: {fileID: 1494749363}
+  screenFading: {fileID: 701631864}
+  _colorCorrectAnswer: {r: 0, g: 1, b: 0, a: 1}
+  _colorWrongAnswer: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1 &366504714
 GameObject:
   m_ObjectHideFlags: 0
@@ -1302,10 +1305,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 937dded4c78c23646a2c68005fa16faa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  curGameState: 0
   groupAsset: {fileID: 11400000, guid: 3417382a166e2ed4589178f16c9c998b, type: 2}
   numQuestion: 5
   isPause: 0
+  curGameState: 0
 --- !u!4 &515711147
 Transform:
   m_ObjectHideFlags: 0
@@ -2220,9 +2223,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cb27d60367b8b64e932e7d702c7dc7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  FadingColor: {r: 0, g: 0, b: 0, a: 1}
   _defaultTransitionDuration: 1
   _transparentColor: {r: 0, g: 0, b: 0, a: 0}
-  _blackColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!114 &701631865
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4835,9 +4838,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cb27d60367b8b64e932e7d702c7dc7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  FadingColor: {r: 0, g: 0, b: 0, a: 1}
   _defaultTransitionDuration: 1
   _transparentColor: {r: 0, g: 0, b: 0, a: 0}
-  _blackColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!224 &1593822276
 RectTransform:
   m_ObjectHideFlags: 0

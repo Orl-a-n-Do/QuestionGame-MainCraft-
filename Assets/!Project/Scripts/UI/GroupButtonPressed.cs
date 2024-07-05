@@ -2,11 +2,10 @@ using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
-using YG;
 
 public class GroupButtonPressed : MonoBehaviour
 {
-    public const float OnClickDelay = 1f;
+    public const float OnClickDelay = 0.75f;
     public Action<int> OnButtonClick;
 
     [SerializeField] private int _id;
@@ -31,10 +30,11 @@ public class GroupButtonPressed : MonoBehaviour
 
     private IEnumerator Invoke(float delay)
     {
+        OnButtonClick?.Invoke(_id);
+
         Singleton<ScreenFading>.Instance.Fade(delay);
         yield return new WaitForSeconds(delay);
 
         Singleton<ScreenFading>.Instance.Appear(delay);
-        OnButtonClick?.Invoke(_id);
     }
 }

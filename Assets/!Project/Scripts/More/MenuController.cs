@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MenuController : MonoBehaviour
@@ -14,6 +12,7 @@ public class MenuController : MonoBehaviour
     {
         GameController.instance.onChangeState += ChangeState;
         GroupButton[] groupButtons = GetComponentsInChildren<GroupButton>(true);
+
         for(int i = 0; i < groupButtons.Length; i++)
         {
             groupButtons[i].Init();
@@ -56,20 +55,20 @@ public class MenuController : MonoBehaviour
             case GameState.Menu:
                 startMenu.SetActive(true);
                 break;
+            
             case GameState.Game:
                 questions.SetActive(true);
                 break;
+            
             case GameState.Result:
                 results.SetActive(true);
                 break;
+
             case GameState.Pause:
                 pauseMenu.SetActive(true);
                 break;
         }
     }
 
-    private void OnDestroy()
-    {
-        GameController.instance.onChangeState -= ChangeState;
-    }
+    private void OnDestroy() => GameController.instance.onChangeState -= ChangeState;
 }

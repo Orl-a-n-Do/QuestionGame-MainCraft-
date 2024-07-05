@@ -1,20 +1,22 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ResultController : MonoBehaviour {
-	[SerializeField] private Text resultText;
+public class ResultController : MonoBehaviour
+{
+    [SerializeField] private Text resultText;
 
-	private void OnEnable() {
-		SetResults(Score.instance.FinalScore);
-	}
+    private void OnEnable()
+    {
+        SetResults(Score.instance.FinalScore, Score.instance.MaxScore);
+    }
 
-	public void SetResults(int res) {
-		resultText.text = res.ToString();
-	}
+    public void SetResults(int result, int maxResult)
+    {
+        resultText.text = $"{result} / {maxResult}";
+    }
 
-	public void ShowMenu() {
-		GameController.instance.ReturnToMenu();
-	}
+    public void ShowMenu()
+    {
+        GameController.instance.ReturnToMenu();
+    }
 }
