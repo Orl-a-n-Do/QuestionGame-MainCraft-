@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,11 +10,13 @@ public class QuestinController : MonoBehaviour
     [SerializeField] private GroupButton groupButton;
     [SerializeField] private GroupAsset groupAsset;
     [SerializeField] private Text questionText;
+    [SerializeField] private TMP_Text completedQuestions;
 
-    [Space(30f)]
+    [Space]
     [SerializeField] private ScreenFading screenFading;
-    [SerializeField] private Color _colorCorrectAnswer;
-    [SerializeField] private Color _colorWrongAnswer;
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip rigthAudioClip;
+    [SerializeField] private AudioClip dontRigthAudioClip;
 
     private QuestionAsset questionAsset;
     private List<int> usedQuestions;
@@ -25,10 +28,9 @@ public class QuestinController : MonoBehaviour
         StartQuestion();
     }
 
-    private void Start()
-    {
-        groupButton.OnButtonClicked += CheckAnswer;
-    }
+    private void Start() => groupButton.OnButtonClicked += CheckAnswer;
+
+    private void OnDestroy() => groupButton.OnButtonClicked -= CheckAnswer;
 
     public void StartQuestion()
     {
@@ -61,6 +63,7 @@ public class QuestinController : MonoBehaviour
         }
 
         usedQuestions.Add(questionNumber);
+        completedQuestions.text = $"{usedQuestions.Count} / {groupAsset.questionAssets.Length - EndWithRemainingQuestions}";
         questionAsset = groupAsset.questionAssets[questionNumber];
         SetAnswers();
     }
@@ -76,12 +79,14 @@ public class QuestinController : MonoBehaviour
         if(questionAsset.answers[id].isCorrectAnswer)
         {
             Score.instance.AddScore(1);
-            screenFading.FadingColor = _colorCorrectAnswer;
+            audioSource.clip = rigthAudioClip;
         }
         else
         {
-            screenFading.FadingColor = _colorWrongAnswer;
+            audioSource.clip = dontRigthAudioClip;
         }
+
+        audioSource.Play();
 
         //questionCount--;
         if(questionCount == 0)
@@ -89,11 +94,5 @@ public class QuestinController : MonoBehaviour
 
         else
             GetQuestion();
-
-    }
-
-    private void OnDestroy()
-    {
-        groupButton.OnButtonClicked -= CheckAnswer;
     }
 }

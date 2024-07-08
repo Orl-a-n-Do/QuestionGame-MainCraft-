@@ -7,9 +7,10 @@ using UnityEngine.UI;
 public class ScreenFading : MonoBehaviour
 {
     public event Action OnFading—omplete;
-    public Color FadingColor = new(0, 0, 0, 1);
     
     [SerializeField] private float _defaultTransitionDuration = 0.5f;
+
+    [SerializeField] private Color _fadingColor = new(0, 0, 0, 1);
     [SerializeField] private Color _transparentColor = new(0, 0, 0, 0);
     
     private Image _overlayImage;
@@ -36,7 +37,7 @@ public class ScreenFading : MonoBehaviour
         _overlayImage.raycastTarget = true;
 
         _overlayImage
-            .DOFade(FadingColor.a, duration)
+            .DOFade(_fadingColor.a, duration)
             .OnComplete(() => OnFading—omplete?.Invoke());
     }
 }

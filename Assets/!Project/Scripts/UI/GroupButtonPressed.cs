@@ -30,11 +30,10 @@ public class GroupButtonPressed : MonoBehaviour
 
     private IEnumerator Invoke(float delay)
     {
-        OnButtonClick?.Invoke(_id);
-
         Singleton<ScreenFading>.Instance.Fade(delay);
         yield return new WaitForSeconds(delay);
 
         Singleton<ScreenFading>.Instance.Appear(delay);
+        OnButtonClick?.Invoke(_id);
     }
 }
