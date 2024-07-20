@@ -1,4 +1,3 @@
-using System.Collections;
 using UnityEngine;
 using YG;
 
@@ -20,7 +19,13 @@ public class MenuController : MonoBehaviour
             groupButtons[i].Init();
         }
     }
+
     private void OnDestroy() => GameController.instance.onChangeState -= ChangeState;
+
+    public void ShowFullscreen()
+    {
+        YandexGame.FullscreenShow();
+    }
 
     public void ShowCategory()
     {
@@ -64,7 +69,6 @@ public class MenuController : MonoBehaviour
                 break;
             
             case GameState.Result:
-                StartCoroutine(ShowFullscreen());
                 results.SetActive(true);
                 break;
 
@@ -72,11 +76,5 @@ public class MenuController : MonoBehaviour
                 pauseMenu.SetActive(true);
                 break;
         }
-    }
-
-    private IEnumerator ShowFullscreen()
-    {
-        yield return new WaitForSeconds(1);
-        YandexGame.FullscreenShow();
     }
 }
